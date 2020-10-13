@@ -28,12 +28,28 @@ namespace tavolMolnarGyorgy
             {
                 Console.WriteLine(i.VezNev+" "+i.KerNev+" -----> "+i.Ugras);
             }
+            Console.WriteLine();
+        }
+        
+        static void Egyesuletek()
+        {
+            Console.WriteLine("3. feladat: Egyesületek");
+            string[] egyesulet = new string[] {"Kalocsai Rozmarok","Pecsi Kenguruk","Miskolci Parducok"};
+            foreach (var i in adatok)
+            {
+                if (egyesulet.Contains(i.Egyesulet))
+                {
+                    Console.WriteLine(i.Egyesulet);
+                }
+            }
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
         {
             Beolvas();
             NevekEsUgrasok();
+            Egyesuletek();
             //foreach (var i in adatok)
             //{
             //   Console.WriteLine(i.Rajtszam+ " " + i.VezNev+" "+ i.KerNev+" "+ i.Ugras);

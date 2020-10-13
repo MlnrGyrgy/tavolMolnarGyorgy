@@ -21,6 +21,9 @@
             Egyesulet = egy[2];
             Ugras = int.Parse(egy[3]);
         }
-       
+        public void Nev(string nev)
+        {
+           nev = VezNev + KerNev;
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace tavolMolnarGyorgy
             Console.WriteLine("2.feladat: Nevek és ugrások");
             foreach (var i in adatok)
             {
-                Console.WriteLine(i.VezNev + " " + i.KerNev + " -----> " + i.Ugras);
+                Console.WriteLine(i.VezNev +  " -----> " + i.Ugras);
             }
             Console.WriteLine();
         }
@@ -53,13 +53,24 @@ namespace tavolMolnarGyorgy
                 if (i.Ugras > LegmagasabbUgras)
                 {
                     LegmagasabbUgras = i.Ugras;
+                   
                 }
             }
             Console.WriteLine(LegmagasabbUgras + " ");
         }
         static void AtlagAlatt()
         {
-            Console.WriteLine("5. feladat: Átlag alatti ugrások száma");
+            Console.WriteLine();
+            int mennyi = 0;
+            foreach (var i in adatok)
+            {
+                if (i.Ugras<600)
+                {
+                    mennyi++;
+                }
+                
+            }
+            Console.WriteLine("5. feladat: Átlag alatti ugrások száma: {0}",mennyi);
             Console.WriteLine();
         }
         static void FajlbaIras()
@@ -80,10 +91,7 @@ namespace tavolMolnarGyorgy
             LegnagyobbUgras();
             AtlagAlatt();
             FajlbaIras();
-            //foreach (var i in adatok)
-            //{
-            //   Console.WriteLine(i.Rajtszam+ " " + i.VezNev+" "+ i.KerNev+" "+ i.Ugras);
-            //}
+           
             Console.ReadKey();
         }
     }
